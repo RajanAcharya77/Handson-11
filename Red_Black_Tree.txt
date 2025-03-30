@@ -1,0 +1,25 @@
+class RedBlackNode:
+    def __init__(self, data):
+        self.data = data
+        self.color = 'red'  # New nodes are red by default
+        self.left = None
+        self.right = None
+        self.parent = None
+
+class RedBlackTree:
+    def __init__(self):
+        self.NIL_LEAF = RedBlackNode(0)
+        self.NIL_LEAF.color = 'black'
+        self.root = self.NIL_LEAF
+
+    def insert(self, data):
+        new_node = RedBlackNode(data)
+        new_node.left = self.NIL_LEAF
+        new_node.right = self.NIL_LEAF
+        # Insert node using BST rules, then fix violations
+        # (insert logic not shown for brevity)
+        self.fix_insert(new_node)
+
+    def fix_insert(self, node):
+        pass
+
